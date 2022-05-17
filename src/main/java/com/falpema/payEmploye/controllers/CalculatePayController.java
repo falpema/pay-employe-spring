@@ -18,7 +18,7 @@ public class CalculatePayController {
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
 		}
-		String output = "OUTPUT \n The amount to pay " + name + " is : " + pay + " USD";
+		String output = "The amount to pay " + name + " is: " + pay + " USD";
 		return output;
 	}
 }
