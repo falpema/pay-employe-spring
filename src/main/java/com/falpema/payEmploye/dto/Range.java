@@ -1,4 +1,4 @@
-package com.falpema.dto;
+package com.falpema.payEmploye.dto;
 
 import java.util.Arrays;
 import java.util.Date;

@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.falpema.dto.Range;
+import com.falpema.payEmploye.dto.Range;
 
 public class PayCalculationStrategyFactory {
 	private final PayCalculationStrategy payHoursMonToFriday0To9 = new PayHoursMondayFridayCalculationFrom0To9();
