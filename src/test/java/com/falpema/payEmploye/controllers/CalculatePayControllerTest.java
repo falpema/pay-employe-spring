@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import com.falpema.payEmploye.controller.CalculatePayController;
+
 /**
  * Unit Test of calculate of pay of roll
  * @author falpema
