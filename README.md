@@ -20,7 +20,6 @@ Make the structure of the project following the architecture of microservices wh
      5. **Config:** Project settings.
      6. **Utils:** The utility classes that will be used throughout the project.
     
-![Estrucutura MVC](/agrupado.png "Estructura MVC")
 
 ### Implementation of The Strategy and Factory Patterns
 
