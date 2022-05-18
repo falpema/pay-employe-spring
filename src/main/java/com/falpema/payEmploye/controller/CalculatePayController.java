@@ -46,7 +46,7 @@ public class CalculatePayController {
 	}
 	
 	/**
-	 * generate files with output
+	 * Generate file output.txt with lines of calculates
 	 * @param path with filename or value default  flag to getfile input.txt in resource folder
 	 * @return output.txt in path of inputfile or when is default : path /pay-employe-spring/target/classes/output.txt
 	 */

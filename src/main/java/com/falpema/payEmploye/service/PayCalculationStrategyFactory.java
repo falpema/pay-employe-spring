@@ -16,15 +16,12 @@ public class PayCalculationStrategyFactory {
 	private final PayCalculationStrategy nopayCalculationStrategy = new NoPayCalculation();
 
 	public PayCalculationStrategy getPayHourStrategy(String day, String time) throws ParseException {
-		String time1 = "00:00";
-		String time2 = "09:00";
-		String time3 = "18:00";
-		String time4 = "24:00";
+
 		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-		Date date1 = sdf.parse(time1);
-		Date date2 = sdf.parse(time2);
-		Date date3 = sdf.parse(time3);
-		Date date4 = sdf.parse(time4);
+		Date date1 = sdf.parse("00:00");
+		Date date2 = sdf.parse("09:00");
+		Date date3 = sdf.parse("18:00");
+		Date date4 = sdf.parse("24:00");
 		Range rangMoToFr0To9 = new Range();
 		rangMoToFr0To9.parseDays("MO,TU,WE,TH,FR");
 		rangMoToFr0To9.setHourStart(date1);
