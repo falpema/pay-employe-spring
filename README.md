@@ -26,11 +26,11 @@ Make the structure of the project following the architecture of microservices wh
 
 >  The Strategy pattern allows us to dynamically swap out algorithms at runtime, and the Factory pattern is a creational pattern which allows us to create objects as needed.
 
-2.   **Strategy Pattern:** It was implemented in this clases com.falpema.payEmploye.service.PayCalculationStrategyImpl.java .
-3.   **Factory Patterns:** It was implemented in this clases com.falpema.payEmploye.service.PayCalculationStrategyFactory.java .
+2.   **Strategy Pattern:** It was implemented in this clases com.falpema.payEmploye.service.PayCalculationStrategyImpl.java .  With this each hourly rate calculation is isolated to its own class, making it much easier to understand individual calculations
+![FormatOuput](picts/strategyPattern.png "strategyPattern")
+3.   **Factory Patterns:** It was implemented in this clases com.falpema.payEmploye.service.PayCalculationStrategyFactory.java . I create a factory to encapsulate the logic concerned with selecting appropriate strategies for various conditions in calculate of hour.
+![FormatOuput](picts/FactoryMethod.png "FactoryMethod")
 
-
-![Estrucutura MVC, WS y KAFKA](/configProyect.PNG "Estructura MVC")
 
 ## Running the project locally 
 
