@@ -35,13 +35,17 @@ Make the structure of the project following the architecture of microservices wh
 ## Running the project locally 
 
 * To get started, clone this repo and run in your local spring IDE enviroment.
-* Pasos:
+* Steps:
 
     1. git clone  **https://github.com/falpema/pay-employe-spring.git**. 
     2. Import this proyect in your SpringToolSuite
     3. Run as Spring Boot App.
+    4. Create file input.txt with this format:
+    ![FormatInput](picts/inputFormat.png "Input.txt Format")
     4. To locally consume the rest service :  uri: http://localhost:8080/api/generatepayfile?pathfile=input.txt , for example you can use Postman in the parameter pathFile you have to pass the url of file with enter to Process , **http://localhost:8080/api/generatepayfile?pathfile=/Users/admin/Documents/input.txt**
+    ![FormatOuput](picts/consumeService.png "Consume Service")
     5. Finally an output file will be generated in the same path of the input file but with the name **output.txt** .
+    ![FormatOuput](picts/outputFormat.png "Output.txt Format")
 
 ## Unit Tests
 *To run the tests, run CalculatePayControllerTest.java .
@@ -51,7 +55,7 @@ Make the structure of the project following the architecture of microservices wh
 
 
 
-## Tipos de Web Service REST usados:
+## Types of Web Services REST used:
 
 * GET: It is used to "retrieve" specific information from the server. It is also an idempotent and safe operation. Idempotent means that no matter how many times we call this operation, the result (which we will observe as users).
 
@@ -63,10 +67,7 @@ Make the structure of the project following the architecture of microservices wh
     * DEFINICION DE ESTRUCTURA Y CONFIGURACIÓN: Se crea el proyecto de ejemplo
     * Date: 18/05/2022
     * Autor: Fpenaloza
-* 0.0.1
-    * TASK: 
-        * Seguridad en los servicios   
-        * Documentacion de web service
+
     * Work in progress
 
 ## Información
