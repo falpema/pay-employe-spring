@@ -28,7 +28,7 @@ Make the structure of the project following the architecture of microservices wh
 2.   **Strategy Pattern:** It was implemented in this clases com.falpema.payEmploye.service.PayCalculationStrategyImpl.java .  With this each hourly rate calculation is isolated to its own class, making it much easier to understand individual calculations
 ![FormatOuput](picts/strategyPattern.png "strategyPattern")
 3.   **Factory Patterns:** It was implemented in this clases com.falpema.payEmploye.service.PayCalculationStrategyFactory.java . I create a factory to encapsulate the logic concerned with selecting appropriate strategies for various conditions in calculate of hour.
-![FormatOuput](picts/FactoryMethod.png "FactoryMethod")
+![FormatOuput](picts/factoryMethod.png "FactoryMethod")
 
 
 ## Running the project locally 
