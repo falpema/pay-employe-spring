@@ -8,6 +8,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Utils {
 
@@ -50,5 +53,39 @@ public class Utils {
 
 	}
 	
+	/**
+	 * get string in a format with 2 digits and append ":00"
+	 * 
+	 * @param n number
+	 * @return "n" with 2 digits and append ":00"
+	 */
+	public static String formatted(int number) {
+
+		return String.format("%02d:00", number);
+	}
+	
+	/**
+	 * get string in a format with 2 digits "
+	 * 
+	 * @param n number
+	 * @return "n" with 2 digits "
+	 */
+	public static String formattedWithOutMinutes(int number) {
+
+		return String.format("%02d", number);
+	}
+	
+	/**
+	 * Get amount of hours between two moments
+	 * @param timeRange 10:00-12:00
+	 * @return amount of hours between
+	 * @throws ParseException
+	 */
+	public static double getHoursBetweenRangeTime(String timeRange) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+		Date date1 = sdf.parse(timeRange.split("-")[0]);
+		Date date2 = sdf.parse(timeRange.split("-")[1]);
+		return (Math.abs(date2.getTime() - date1.getTime()) / (60 * 60 * 1000)) % 24;
+	}
 
 }

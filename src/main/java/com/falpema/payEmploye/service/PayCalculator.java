@@ -9,6 +9,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.falpema.payEmploye.util.Utils;
+
 public class PayCalculator {
 
 	public static final Logger log = LoggerFactory.getLogger(PayCalculator.class);
@@ -26,7 +28,7 @@ public class PayCalculator {
 				List<String>  hoursBetween = getHoursbetween(dayHours.substring(2, dayHours.length() ));
 				for (String timeRange : hoursBetween) {
 					PayCalculationStrategy cal = payCalculationStrategyFactory.getPayHourStrategy(day, timeRange);
-					double differenceInHours = getHoursBetweenRangeTime(timeRange);
+					double differenceInHours = Utils.getHoursBetweenRangeTime(timeRange);
 					pay += cal.calculatePay(differenceInHours);
 				}
 			}
@@ -52,40 +54,19 @@ public class PayCalculator {
 		int diferenceHour = Integer.valueOf(finishHour.split(":")[0]) - Integer.valueOf(startHour.split(":")[0]);
 		int diferenceMinuts = Integer.valueOf(finishHour.split(":")[1]) - Integer.valueOf(startHour.split(":")[1]);
 		List<String> hoursBetween = new ArrayList();
+		
 		for (int i = Integer.valueOf(startHour.split(":")[0]) ; i < Integer.valueOf(finishHour.split(":")[0]) ; i++) {
-			hoursBetween.add(formatted(i) + "-" + formatted(i + 1));
+			hoursBetween.add(Utils.formatted(i) + "-" + Utils.formatted(i + 1));
 		}
 		if (diferenceMinuts > 0) {
-			String difMinutes = formattedWithOutMinutes(Integer.valueOf(finishHour)).concat(":")
-					.concat(formattedWithOutMinutes(diferenceMinuts));
-			hoursBetween.add(formatted(Integer.valueOf(startHour) + diferenceHour) + "-" + difMinutes);
+			String difMinutes = Utils.formattedWithOutMinutes(Integer.valueOf(finishHour)).concat(":")
+					.concat(Utils.formattedWithOutMinutes(diferenceMinuts));
+			hoursBetween.add(Utils.formatted(Integer.valueOf(startHour) + diferenceHour) + "-" + difMinutes);
 		}
 		return hoursBetween;
 	}
 
 
 
-	/**
-	 * print "n" with 2 digits and append ":00"
-	 * 
-	 * @param n
-	 * @return
-	 */
-	public static String formatted(int n) {
-
-		return String.format("%02d:00", n);
-	}
-
-	public static String formattedWithOutMinutes(int n) {
-
-		return String.format("%02d", n);
-	}
 	
-	private static double getHoursBetweenRangeTime(String timeRange) throws ParseException {
-		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-		Date date1 = sdf.parse(timeRange.split("-")[0]);
-		Date date2 = sdf.parse(timeRange.split("-")[1]);
-		return (Math.abs(date2.getTime() - date1.getTime()) / (60 * 60 * 1000)) % 24;
-	}
-
 }
