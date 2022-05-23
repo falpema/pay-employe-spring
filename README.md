@@ -1,17 +1,17 @@
 # PayEmployeSpring
 
-Spring project to calculate the payment of hours you work. Design Patterns used are Stratategy Pattern and Factory Method
+Spring project to calculate the payment of hours you work. Design Patterns used are Strategy Pattern and Factory Method
 The microservices architecture was used to structure this project
 
-1.  Configuración de POM
-2.  Archivo `application.properties`
+1.  Configuration of POM
+2.  File `application.properties`
 
 
-## Structure of Proyect
+## Structure of Project
 
 Make the structure of the project following the architecture of microservices where:
 1. It consists of building an application as a set of small services, which are executed in their own process and communicate with lightweight mechanisms. Each service is responsible for implementing a complete functionality of the business. Each service is deployed independently
-2. Algo use MVC architecture to keep configuration and utilities classes separate according to their package
+2. I use MVC architecture to keep configuration and utilities classes separate according to their package
 3. Description:
      1. **Repository:** the DAO data query. It was not used in this project.
      2. **Entities:** The models mapped from the database. In this project it was not used
@@ -69,7 +69,7 @@ Make the structure of the project following the architecture of microservices wh
 
     * Work in progress
 
-## Información
+## Informatión
 
 –  [falpema.](https://github.com/falpema)
 # # PayEmployeSpring
