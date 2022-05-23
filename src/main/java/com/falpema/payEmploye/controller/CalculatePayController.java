@@ -41,8 +41,8 @@ public class CalculatePayController {
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
 		}
-		String output = "The amount to pay " + name + " is: " + pay + " USD";
-		return output;
+		StringBuilder output = new StringBuilder("The amount to pay " + name + " is: " + pay + " USD");
+		return output.toString();
 	}
 	
 	/**
@@ -57,7 +57,7 @@ public class CalculatePayController {
 		Utils util = new Utils();
 		InputStream inputStream = null;
 
-		String output = "";
+		StringBuilder output = new StringBuilder();
 		try {
 			String data;
 			String pathOut;
@@ -76,17 +76,17 @@ public class CalculatePayController {
 			String line = null;
 
 			while ((line = bufReader.readLine()) != null) {
-				output += calculatePay(line) + "\n";
+				output.append(calculatePay(line) + "\n");
 			}
 
-			 util.writeStringInFile(output,pathOut);
-			 output += "file was created in "+pathOut;
+			 util.writeStringInFile(output.toString(),pathOut);
+			 output.append("file was created in "+pathOut);
 		} catch (FileNotFoundException e) {
 			log.error("FileNotFoundException " + e.getMessage(), e);
 		} catch (IOException e) {
 			log.error("IOException " + e.getMessage(), e);
 		}
 
-		return output;
+		return output.toString();
 	}
 }
